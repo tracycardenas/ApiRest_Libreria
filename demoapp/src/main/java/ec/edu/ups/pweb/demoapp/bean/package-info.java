@@ -1,1 +1,0 @@
-package ec.edu.ups.pweb.demoapp.bean;

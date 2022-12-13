@@ -39,7 +39,7 @@ public class LibroDAO {
 		List<Libro> listado = new ArrayList<Libro>();
 		
 		//JPQL  -> SQL
-		String jpql = "SELECT op FROM libro op";
+		String jpql = "SELECT op FROM Libro op";
 	
 		
 		Query query = em.createQuery(jpql,Libro.class);
