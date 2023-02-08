@@ -16,6 +16,7 @@ public class Libro implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	
 	@Id
 	@Column(name="lib_id")
 	private String id;

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.27.0 (b0ed6a2c9)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: swaggereditor
+  name: swaggereditor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: swaggereditor
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.27.0 (b0ed6a2c9)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/datalogger-net: "true"
+        io.kompose.service: swaggereditor
+    spec:
+      containers:
+        - env:
+            - name: API_URL
+              value: http://localhost:8080/demoapp/rs/libros
+          image: swaggerapi/swagger-editor
+          name: swaggereditor
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}
